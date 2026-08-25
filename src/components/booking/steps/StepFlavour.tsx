@@ -2,7 +2,6 @@ import type { EnquiryData } from "../../../lib/enquiry";
 import type { StepErrors } from "../../../lib/validation";
 import { CUISINE_OPTIONS, SPICE_OPTIONS } from "../../../config/booking";
 import { ChoicePills } from "../ChoicePills";
-import { AdventureSlider } from "../AdventureSlider";
 import { StepShell } from "../StepShell";
 
 type Props = {
@@ -32,11 +31,6 @@ export function StepFlavour({ data, update, errors }: Props) {
           onChange={(v) => update({ spiceLevel: v as string })}
           error={errors.spiceLevel}
         />
-      </div>
-
-      <div>
-        <p className="text-[11px] tracking-[0.16em] uppercase text-grey mb-3">Adventure Level</p>
-        <AdventureSlider value={data.adventureLevel} onChange={(v) => update({ adventureLevel: v })} />
       </div>
     </StepShell>
   );

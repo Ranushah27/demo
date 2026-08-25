@@ -11,7 +11,16 @@ export const OCCASION_OPTIONS = [
   "Other",
 ] as const;
 
-export const PROTEIN_OPTIONS = ["Beef", "Chicken", "Lamb", "Fish", "Seafood", "Vegetarian", "Chef's Choice"] as const;
+export const PROTEIN_OPTIONS = [
+  "Beef",
+  "Chicken",
+  "Lamb",
+  "Fish",
+  "Seafood",
+  "Non-Vegetarian",
+  "Vegetarian",
+  "Chef's Choice",
+] as const;
 
 export const CUISINE_OPTIONS = [
   "Modern Asian",

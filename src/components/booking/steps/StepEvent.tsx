@@ -4,6 +4,18 @@ import { OCCASION_OPTIONS } from "../../../config/booking";
 import { FormField } from "../FormField";
 import { ChoicePills } from "../ChoicePills";
 import { StepShell } from "../StepShell";
+import { TimePicker } from "../TimePicker";
+
+function CalendarIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 9.5H21" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M8 3V6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M16 3V6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 type Props = {
   data: EnquiryData;
@@ -54,14 +66,10 @@ export function StepEvent({ data, update, errors }: Props) {
           value={data.date}
           onChange={(e) => update({ date: e.target.value })}
           error={errors.date}
+          icon={<CalendarIcon />}
+          min={new Date().toISOString().split("T")[0]}
         />
-        <FormField
-          label="Preferred Time"
-          type="time"
-          value={data.time}
-          onChange={(e) => update({ time: e.target.value })}
-          error={errors.time}
-        />
+        <TimePicker label="Preferred Time" value={data.time} onChange={(time) => update({ time })} error={errors.time} />
         <div className="sm:col-span-2">
           <FormField
             label="Location"

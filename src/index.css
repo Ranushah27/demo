@@ -157,6 +157,17 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Date fields render their own custom calendar icon (FormField's `icon`
+     prop) — hide the native browser one so there isn't a double icon,
+     while keeping the native picker itself fully functional on click. */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    cursor: pointer;
+  }
 }
 
 @keyframes kenburns {

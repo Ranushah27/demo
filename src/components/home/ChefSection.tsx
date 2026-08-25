@@ -33,7 +33,7 @@ export function ChefSection() {
               </div>
 
               <Link to="/enquire" className="btn-outline mt-10">
-                Plan Your Evening
+                Enquire With Chef Maddy
               </Link>
             </Reveal>
           </div>

@@ -16,7 +16,6 @@ export type EnquiryData = {
   // Step 3 — Your Flavour
   cuisine: string;
   spiceLevel: string;
-  adventureLevel: number; // 0 = Classic, 100 = Adventurous
 
   // Step 4 — Dietary Requirements
   dietary: string[];
@@ -48,7 +47,6 @@ export const EMPTY_ENQUIRY: EnquiryData = {
 
   cuisine: "",
   spiceLevel: "",
-  adventureLevel: 50,
 
   dietary: [],
   allergies: "",
@@ -67,15 +65,6 @@ function line(label: string, value: string) {
 }
 
 export function buildEnquiryMessage(data: EnquiryData): string {
-  const adventureLabel =
-    data.adventureLevel <= 20
-      ? "Classic"
-      : data.adventureLevel >= 80
-        ? "Adventurous"
-        : data.adventureLevel <= 50
-          ? "Leaning Classic"
-          : "Leaning Adventurous";
-
   return [
     "MADDY COOKS — PRIVATE DINING ENQUIRY",
     "",
@@ -93,7 +82,6 @@ export function buildEnquiryMessage(data: EnquiryData): string {
     "",
     line("Cuisine", data.cuisine),
     line("Spice Level", data.spiceLevel),
-    line("Adventure Level", `${adventureLabel} (${data.adventureLevel}/100)`),
     "",
     line("Dietary Requirements", data.dietary.join(", ")),
     line("Allergies", data.allergies),
