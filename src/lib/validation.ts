@@ -17,7 +17,9 @@ export function getMinBookableDate(): string {
 // picks a date, rather than waiting until they try to continue.
 export function validateDateField(date: string): string | undefined {
   if (!date) return undefined;
-  if (date < getMinBookableDate()) return "That date has already passed. Please choose a date from tomorrow onwards.";
+  if (date < getMinBookableDate()) {
+    return "Same-day and past dates aren't available. Please choose a date from tomorrow onwards.";
+  }
   return undefined;
 }
 
