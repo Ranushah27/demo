@@ -21,7 +21,7 @@ export function ChefSection() {
                 <p className="font-display italic text-xl md:text-2xl text-gold-soft leading-snug">
                   &ldquo;{CHEF.quote}&rdquo;
                 </p>
-                <p className="mt-3 text-xs tracking-[0.16em] uppercase text-grey">— Maddy Cooks</p>
+                <p className="mt-3 text-xs tracking-[0.16em] uppercase text-grey">Maddy Cooks</p>
               </blockquote>
             </Reveal>
 

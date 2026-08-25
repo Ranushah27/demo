@@ -20,7 +20,7 @@ export function TestimonialsSection() {
             <Reveal
               key={i}
               delay={(Math.min(i, 3) as 0 | 1 | 2 | 3)}
-              className="border border-line p-8 flex flex-col justify-between min-h-[14rem]"
+              className="border border-line p-8 flex flex-col justify-between min-h-[14rem] transition-colors duration-500 hover:border-gold/40"
             >
               <p className="font-display italic text-lg text-ivory/90 leading-snug">&ldquo;{t.quote}&rdquo;</p>
               <div className="mt-6">

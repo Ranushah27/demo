@@ -30,7 +30,7 @@ export function ChoicePills({ options, value, onChange, multi = false, error }: 
               role={multi ? "checkbox" : "radio"}
               aria-checked={isSelected}
               onClick={() => toggle(option)}
-              className={`px-5 py-3 text-sm border transition-all duration-300 ${
+              className={`px-5 py-3 text-sm border transition-all duration-300 active:scale-95 ${
                 isSelected
                   ? "border-gold bg-gold text-black font-medium"
                   : "border-line text-ivory/80 hover:border-gold/50 hover:text-ivory"

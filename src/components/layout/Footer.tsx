@@ -50,7 +50,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="text-sm text-ivory/80 hover:text-gold transition-colors"
                 >
-                  Instagram — @{SITE.instagramHandle}
+                  Instagram (@{SITE.instagramHandle})
                 </a>
               </li>
               <li>

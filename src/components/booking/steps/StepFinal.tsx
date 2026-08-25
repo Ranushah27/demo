@@ -23,7 +23,7 @@ export function StepFinal({ data, update }: Props) {
   }
 
   return (
-    <StepShell eyebrow="Step 06 — Anything Else" title="Tell Chef Maddy anything else.">
+    <StepShell eyebrow="Step 06 · Anything Else" title="Tell Chef Maddy anything else.">
       <FormField
         as="textarea"
         rows={6}
@@ -58,8 +58,8 @@ export function StepFinal({ data, update }: Props) {
           <img src={previewUrl} alt="Inspiration preview" className="mt-4 h-32 w-32 object-cover border border-line" />
         )}
         <p className="mt-3 text-xs text-grey/70">
-          Your enquiry opens in WhatsApp so Chef Maddy can respond directly — please attach this image there too, as
-          images can't be sent automatically through this form.
+          Your enquiry opens in WhatsApp so Chef Maddy can respond directly. Please attach this image there too,
+          since images can't be sent automatically through this form.
         </p>
       </div>
     </StepShell>

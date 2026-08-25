@@ -67,7 +67,7 @@ export const EMPTY_ENQUIRY: EnquiryData = {
 };
 
 function line(label: string, value: string) {
-  return `${label}: ${value || "—"}`;
+  return `${label}: ${value || "Not provided"}`;
 }
 
 // Resolves a single-select "Other" answer to the free text the guest typed,
@@ -85,7 +85,7 @@ function resolveOtherList(values: string[], otherText: string) {
 
 export function buildEnquiryMessage(data: EnquiryData): string {
   return [
-    "MADDY COOKS — PRIVATE DINING ENQUIRY",
+    "MADDY COOKS · PRIVATE DINING ENQUIRY",
     "",
     line("Name", data.fullName),
     line("Email", data.email),

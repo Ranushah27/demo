@@ -14,7 +14,7 @@ type Props = {
 
 export function StepDietary({ data, update, errors }: Props) {
   return (
-    <StepShell eyebrow="Step 04 — Dietary Requirements" title="Do you or your guests have any dietary requirements?">
+    <StepShell eyebrow="Step 04 · Dietary Requirements" title="Do you or your guests have any dietary requirements?">
       <div>
         <ChoicePills
           options={DIETARY_OPTIONS}

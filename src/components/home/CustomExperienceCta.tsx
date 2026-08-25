@@ -24,7 +24,7 @@ export function CustomExperienceCta() {
           <Reveal delay={2}>
             <p className="text-grey text-base md:text-lg leading-relaxed mt-6 max-w-lg mx-auto">
               Share your taste, your occasion and your guests through a short guided form. Chef Maddy remains the
-              professional who curates the final menu — you don't build it, you inspire it.
+              professional who curates the final menu: you don't build it, you inspire it.
             </p>
           </Reveal>
           <Reveal delay={3} className="mt-10">

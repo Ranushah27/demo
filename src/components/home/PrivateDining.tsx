@@ -23,7 +23,7 @@ export function PrivateDining() {
           <Reveal delay={2}>
             <p className="text-grey text-base md:text-lg leading-relaxed mt-6">
               Private dining is designed for intimate occasions where the food is prepared specifically for your
-              group — not served from a fixed menu, but created around the people at your table.
+              group, not served from a fixed menu but created around the people at your table.
             </p>
           </Reveal>
         </div>
@@ -33,7 +33,7 @@ export function PrivateDining() {
             <Reveal
               key={occasion.title}
               delay={(Math.min(i, 3) as 0 | 1 | 2 | 3)}
-              className={`bg-charcoal p-8 md:p-10 group lg:col-span-2 ${i >= 3 ? "lg:col-span-3" : ""}`}
+              className={`bg-charcoal p-8 md:p-10 group lg:col-span-2 transition-colors duration-500 hover:bg-panel ${i >= 3 ? "lg:col-span-3" : ""}`}
             >
               <span className="font-display text-3xl text-gold/40 group-hover:text-gold transition-colors">
                 {String(i + 1).padStart(2, "0")}

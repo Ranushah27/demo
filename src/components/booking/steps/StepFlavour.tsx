@@ -13,7 +13,7 @@ type Props = {
 
 export function StepFlavour({ data, update, errors }: Props) {
   return (
-    <StepShell eyebrow="Step 03 — Your Flavour" title="What direction should the flavours take?">
+    <StepShell eyebrow="Step 03 · Your Flavour" title="What direction should the flavours take?">
       <div>
         <p className="text-[11px] tracking-[0.16em] uppercase text-grey mb-3">Cuisine / Flavour Direction</p>
         <ChoicePills

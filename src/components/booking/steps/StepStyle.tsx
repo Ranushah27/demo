@@ -12,7 +12,7 @@ type Props = {
 
 export function StepStyle({ data, update, errors }: Props) {
   return (
-    <StepShell eyebrow="Step 05 — Dining Style" title="How would you like your experience to feel?">
+    <StepShell eyebrow="Step 05 · Dining Style" title="How would you like your experience to feel?">
       <ChoicePills
         options={DINING_STYLE_OPTIONS}
         value={data.diningStyle}

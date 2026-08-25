@@ -14,16 +14,16 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Where can Chef Maddy provide private dining?",
-    answer: "[SERVICE AREA — locations and travel radius Chef Maddy currently covers.]",
+    answer: "[SERVICE AREA: locations and travel radius Chef Maddy currently covers.]",
   },
   {
     question: "How many guests can you accommodate?",
-    answer: "[GUEST CAPACITY — minimum and maximum group sizes Chef Maddy can cater for.]",
+    answer: "[GUEST CAPACITY: minimum and maximum group sizes Chef Maddy can cater for.]",
   },
   {
     question: "Can I customise the menu?",
     answer:
-      "Yes. You share your preferences — proteins, flavours, occasion and dietary needs — and Chef Maddy curates a menu around them. Menus are not fixed or ordered à la carte.",
+      "Yes. You share your preferences (proteins, flavours, occasion and dietary needs) and Chef Maddy curates a menu around them. Menus are not fixed or ordered à la carte.",
   },
   {
     question: "Can I choose the protein?",
@@ -37,11 +37,11 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Can you accommodate allergies?",
-    answer: "[ALLERGY POLICY — how allergies are handled and any limitations, to be confirmed by the business.]",
+    answer: "[ALLERGY POLICY: how allergies are handled and any limitations, to be confirmed by the business.]",
   },
   {
     question: "How far in advance should I book?",
-    answer: "[LEAD TIME — recommended notice period for booking a private dining experience.]",
+    answer: "[LEAD TIME: recommended notice period for booking a private dining experience.]",
   },
   {
     question: "How does pricing work?",
@@ -50,15 +50,15 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "How does payment work?",
-    answer: "[PAYMENT POLICY — deposits, accepted payment methods and timing, to be confirmed by the business.]",
+    answer: "[PAYMENT POLICY: deposits, accepted payment methods and timing, to be confirmed by the business.]",
   },
   {
     question: "What happens after I submit an enquiry?",
     answer:
-      "Chef Maddy will review your dining request and follow up with you directly — by WhatsApp or email — with availability, menu recommendations and next steps. Submitting an enquiry does not confirm a booking.",
+      "Chef Maddy will review your dining request and follow up with you directly, by WhatsApp or email, with availability, menu recommendations and next steps. Submitting an enquiry does not confirm a booking.",
   },
   {
     question: "What happens if my preferred date is unavailable?",
-    answer: "[AVAILABILITY POLICY — how alternative dates or a waitlist are handled.]",
+    answer: "[AVAILABILITY POLICY: how alternative dates or a waitlist are handled.]",
   },
 ];

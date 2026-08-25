@@ -13,7 +13,7 @@ type Props = {
 
 export function StepLove({ data, update, errors }: Props) {
   return (
-    <StepShell eyebrow="Step 02 — What Do You Love?" title="What would you like at the centre of your meal?">
+    <StepShell eyebrow="Step 02 · What Do You Love?" title="What would you like at the centre of your meal?">
       <ChoicePills
         options={PROTEIN_OPTIONS}
         value={data.proteins}

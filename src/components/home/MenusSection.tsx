@@ -29,10 +29,12 @@ export function MenusSection() {
             <Reveal
               key={menu.id}
               delay={(Math.min(i, 3) as 0 | 1 | 2 | 3)}
-              className="bg-black p-8 flex flex-col justify-between min-h-[16rem]"
+              className="group bg-black p-8 flex flex-col justify-between min-h-[16rem] transition-colors duration-500 hover:bg-panel"
             >
               <div>
-                <h3 className="font-display text-2xl text-ivory">{menu.title}</h3>
+                <h3 className="font-display text-2xl text-ivory transition-colors duration-500 group-hover:text-gold-soft">
+                  {menu.title}
+                </h3>
                 <p className="text-sm text-grey mt-4 leading-relaxed">{menu.description}</p>
               </div>
               <p className="text-[11px] tracking-[0.14em] uppercase text-gold-dim mt-8">{menu.courses}</p>
