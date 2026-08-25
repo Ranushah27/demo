@@ -25,7 +25,7 @@ export const MENU_FORMATS: MenuFormat[] = [
     id: "five-course",
     title: "Five Course",
     description: "A multi-course experience designed for guests who want a longer culinary experience.",
-    courses: "Five courses, paced across the evening",
+    courses: "Five courses, paced across the meal",
   },
   {
     id: "chefs-tasting",

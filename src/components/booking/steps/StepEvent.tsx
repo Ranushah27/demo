@@ -26,7 +26,7 @@ type Props = {
 
 export function StepEvent({ data, update, errors }: Props) {
   return (
-    <StepShell eyebrow="Step 01 — Your Event" title="Tell us about your evening.">
+    <StepShell eyebrow="Step 01 — Your Event" title="Tell us about your event.">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <FormField
           label="Full Name"

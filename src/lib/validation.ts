@@ -47,7 +47,7 @@ export function validateStep(step: number, data: EnquiryData): StepErrors {
   }
 
   if (step === 4) {
-    if (!data.diningStyle) errors.diningStyle = "Please choose how you'd like the evening to feel.";
+    if (!data.diningStyle) errors.diningStyle = "Please choose how you'd like the experience to feel.";
     if (!data.courses) errors.courses = "Please choose a course preference.";
     if (!data.budget) errors.budget = "Please choose an approximate budget.";
   }

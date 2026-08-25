@@ -46,7 +46,7 @@ export function PrivateDining() {
 
         <Reveal delay={3} className="mt-14">
           <Link to="/enquire" className="btn-gold">
-            Reserve Your Evening
+            Reserve Your Date
           </Link>
         </Reveal>
       </div>

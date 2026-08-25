@@ -20,7 +20,7 @@ export type ProcessStep = {
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
-    title: "Tell us about your evening",
+    title: "Tell us about your event",
     description: "Date, location, number of guests and occasion.",
   },
   {

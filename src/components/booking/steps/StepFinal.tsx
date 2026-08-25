@@ -30,7 +30,7 @@ export function StepFinal({ data, update }: Props) {
         label="Your message"
         value={data.notes}
         onChange={(e) => update({ notes: e.target.value })}
-        placeholder="Tell us about the occasion, your guests, something they love, a dish you'd like inspired, or anything else that would make the evening special."
+        placeholder="Tell us about the occasion, your guests, something they love, a dish you'd like inspired, or anything else that would make it special."
       />
 
       <div>

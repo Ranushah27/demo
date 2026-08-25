@@ -11,7 +11,7 @@ export function HowItWorks() {
         </Reveal>
         <Reveal delay={1}>
           <h2 className="font-display text-4xl sm:text-5xl text-ivory mt-6 text-center text-balance">
-            From your evening, to your table.
+            From your occasion, to your table.
           </h2>
         </Reveal>
 
