@@ -7,7 +7,6 @@ const FOOTER_LINKS = [
   { label: "The Chef", id: "chef" },
   { label: "Private Dining", id: "private-dining" },
   { label: "Menus", id: "menus" },
-  { label: "Gallery", id: "gallery" },
   { label: "FAQ", id: "faq" },
 ];
 

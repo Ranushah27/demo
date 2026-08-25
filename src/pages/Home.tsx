@@ -8,7 +8,6 @@ import { PrivateDining } from "../components/home/PrivateDining";
 import { HowItWorks } from "../components/home/HowItWorks";
 import { CustomExperienceCta } from "../components/home/CustomExperienceCta";
 import { MenusSection } from "../components/home/MenusSection";
-import { GallerySection } from "../components/home/GallerySection";
 import { InstagramSection } from "../components/home/InstagramSection";
 import { TestimonialsSection } from "../components/home/TestimonialsSection";
 import { FaqSection } from "../components/home/FaqSection";
@@ -25,7 +24,6 @@ export function Home() {
         <HowItWorks />
         <CustomExperienceCta />
         <MenusSection />
-        <GallerySection />
         <InstagramSection />
         <TestimonialsSection />
         <FaqSection />
