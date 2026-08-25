@@ -6,6 +6,8 @@ export type EnquiryData = {
   date: string;
   time: string;
   location: string;
+  locationLat: number | null;
+  locationLng: number | null;
   guests: string;
   occasion: string;
   occasionOther: string;
@@ -42,6 +44,8 @@ export const EMPTY_ENQUIRY: EnquiryData = {
   date: "",
   time: "",
   location: "",
+  locationLat: null,
+  locationLng: null,
   guests: "",
   occasion: "",
   occasionOther: "",
@@ -84,6 +88,8 @@ function resolveOtherList(values: string[], otherText: string) {
 }
 
 export function buildEnquiryMessage(data: EnquiryData): string {
+  const hasPin = data.locationLat != null && data.locationLng != null;
+
   return [
     "MADDY COOKS · PRIVATE DINING ENQUIRY",
     "",
@@ -93,6 +99,7 @@ export function buildEnquiryMessage(data: EnquiryData): string {
     line("Date", data.date),
     line("Time", data.time),
     line("Location", data.location),
+    ...(hasPin ? [line("Map", `https://www.google.com/maps?q=${data.locationLat},${data.locationLng}`)] : []),
     line("Guests", data.guests),
     line("Occasion", resolveOther(data.occasion, data.occasionOther)),
     "",

@@ -3,6 +3,7 @@ import { getMinBookableDate, validateDateField, type StepErrors } from "../../..
 import { OCCASION_OPTIONS } from "../../../config/booking";
 import { FormField } from "../FormField";
 import { ChoicePills } from "../ChoicePills";
+import { LocationAutocomplete } from "../LocationAutocomplete";
 import { OtherField } from "../OtherField";
 import { StepShell } from "../StepShell";
 import { TimePicker } from "../TimePicker";
@@ -78,12 +79,10 @@ export function StepEvent({ data, update, errors, setFieldError }: Props) {
         />
         <TimePicker label="Preferred Time" value={data.time} onChange={(time) => update({ time })} error={errors.time} />
         <div className="sm:col-span-2">
-          <FormField
-            label="Location"
+          <LocationAutocomplete
             value={data.location}
-            onChange={(e) => update({ location: e.target.value })}
+            onSelect={({ address, lat, lng }) => update({ location: address, locationLat: lat, locationLng: lng })}
             error={errors.location}
-            placeholder="Home address or venue"
           />
         </div>
       </div>

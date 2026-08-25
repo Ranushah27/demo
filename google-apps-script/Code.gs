@@ -11,6 +11,7 @@ var HEADERS = [
   "Date",
   "Time",
   "Location",
+  "Map Link",
   "Guests",
   "Occasion",
   "Preferred Proteins",
@@ -49,6 +50,11 @@ function doPost(e) {
     sheet.appendRow(HEADERS);
   }
 
+  var mapLink =
+    data.locationLat != null && data.locationLng != null
+      ? "https://www.google.com/maps?q=" + data.locationLat + "," + data.locationLng
+      : "";
+
   sheet.appendRow([
     new Date(),
     data.fullName,
@@ -57,6 +63,7 @@ function doPost(e) {
     data.date,
     data.time,
     data.location,
+    mapLink,
     data.guests,
     resolveOther(data.occasion, data.occasionOther),
     (data.proteins || []).join(", "),

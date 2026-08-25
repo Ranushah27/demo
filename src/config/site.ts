@@ -20,6 +20,10 @@ export const SITE = {
   serviceArea: "Malaysia", // TODO: confirm exact service area / cities covered
 } as const;
 
+// ISO 3166-1 alpha-2 code used to bias the location autocomplete toward
+// Chef Maddy's service area (see src/components/booking/LocationAutocomplete.tsx).
+export const GEOCODING_COUNTRY_CODE = "my";
+
 export function buildWhatsAppLink(message: string, number: string = WHATSAPP_NUMBER) {
   const encoded = encodeURIComponent(message);
   return `https://wa.me/${number}?text=${encoded}`;
