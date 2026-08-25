@@ -10,8 +10,7 @@ export function validateStep(step: number, data: EnquiryData): StepErrors {
 
   if (step === 0) {
     if (!data.fullName.trim()) errors.fullName = "Please tell us your name.";
-    if (!data.email.trim()) errors.email = "Please enter your email.";
-    else if (!EMAIL_RE.test(data.email)) errors.email = "That email doesn't look right.";
+    if (data.email.trim() && !EMAIL_RE.test(data.email)) errors.email = "That email doesn't look right.";
     if (!data.whatsapp.trim()) errors.whatsapp = "Please add a WhatsApp number.";
     else if (!PHONE_RE.test(data.whatsapp.trim())) errors.whatsapp = "Please enter a valid phone number.";
     if (!data.date) errors.date = "Please choose a date.";

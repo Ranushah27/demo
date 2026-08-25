@@ -36,7 +36,8 @@ export function StepEvent({ data, update, errors }: Props) {
           autoComplete="name"
         />
         <FormField
-          label="Email"
+          label="Email (Optional)"
+          id="email"
           type="email"
           value={data.email}
           onChange={(e) => update({ email: e.target.value })}
