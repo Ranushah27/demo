@@ -26,6 +26,29 @@ paid hosting or database needed.
 That's it — the header row is created automatically on the first submission,
 and every enquiry after that appends as a new row.
 
+## Payment tracking (for Chef Maddy)
+
+The website only ever collects a *budget range* as a guide — it never quotes
+or charges a final price, since that's something Chef Maddy agrees with each
+customer individually over WhatsApp. So payment tracking isn't a form field;
+it's a handful of extra columns on the same Sheet, in the same row as that
+customer's enquiry, that Chef Maddy fills in himself once a deal is done:
+
+**Deal Status, Final Price Agreed (RM), Payment Method, Amount Paid (RM),
+Balance Due (RM), Payment Date, Payment Notes**
+
+Workflow: a customer's enquiry always lands as a new row automatically.
+Once Chef Maddy agrees a final price and the customer pays (QR/DuitNow, bank
+transfer, cash, whatever), he finds that same row (easy to spot by name and
+date) and fills in those columns by hand.
+
+**One-time setup** for the nice-to-haves (dropdown lists + colour
+highlighting so unpaid deals stand out): after pasting the latest `Code.gs`
+and redeploying, in the Apps Script editor pick **setupPaymentTracking** from
+the function dropdown at the top and click **Run**. Authorize it if asked.
+This is safe to re-run any time — for example once you've gone past row 1000
+and want the dropdowns/highlighting extended further down.
+
 ## Notes
 
 - If you ever change the form's questions, update `HEADERS` in `Code.gs` and
