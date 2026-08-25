@@ -14,8 +14,9 @@ export function SuccessScreen({ whatsappUrl }: Props) {
           Your table is one step closer.
         </h1>
         <p className="text-grey mt-6 leading-relaxed">
-          Thank you. Chef Maddy will review your dining request and get back to you with availability, menu
-          recommendations and next steps.
+          Thank you. Your dining request has been received. Chef Maddy will review your enquiry and get back to you
+          with availability, menu recommendations and next steps. You can also continue on WhatsApp to connect with
+          him directly.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
