@@ -62,9 +62,13 @@ export function Hero() {
             <div
               className={`mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             >
-              <Link to="/enquire" className="btn-gold">
-                Enquire Now
-              </Link>
+              {/* Hidden on mobile — the sticky bottom bar already covers this action there,
+                  so showing both at once would be two identical-purpose buttons on screen together. */}
+              <div className="hidden lg:block">
+                <Link to="/enquire" className="btn-gold">
+                  Plan Your Dining Experience
+                </Link>
+              </div>
               <SectionLink
                 targetId="experience"
                 className="text-xs tracking-[0.18em] uppercase text-ivory/80 hover:text-gold transition-colors flex items-center gap-2"
