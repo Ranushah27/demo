@@ -1,5 +1,5 @@
 import type { EnquiryData } from "../../../lib/enquiry";
-import type { StepErrors } from "../../../lib/validation";
+import { getMinBookableDate, type StepErrors } from "../../../lib/validation";
 import { OCCASION_OPTIONS } from "../../../config/booking";
 import { FormField } from "../FormField";
 import { ChoicePills } from "../ChoicePills";
@@ -69,7 +69,7 @@ export function StepEvent({ data, update, errors }: Props) {
           onChange={(e) => update({ date: e.target.value })}
           error={errors.date}
           icon={<CalendarIcon />}
-          min={new Date().toISOString().split("T")[0]}
+          min={getMinBookableDate()}
         />
         <TimePicker label="Preferred Time" value={data.time} onChange={(time) => update({ time })} error={errors.time} />
         <div className="sm:col-span-2">

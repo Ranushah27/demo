@@ -5,6 +5,14 @@ export type StepErrors = Partial<Record<keyof EnquiryData, string>>;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+\d][\d\s-]{7,}$/;
 
+// Earliest bookable date: tomorrow. Private dining needs at least a day's
+// notice to plan and shop for, so today and any past date are excluded.
+export function getMinBookableDate(): string {
+  const d = new Date();
+  d.setDate(d.getDate() + 1);
+  return d.toISOString().split("T")[0];
+}
+
 export function validateStep(step: number, data: EnquiryData): StepErrors {
   const errors: StepErrors = {};
 
@@ -14,6 +22,7 @@ export function validateStep(step: number, data: EnquiryData): StepErrors {
     if (!data.whatsapp.trim()) errors.whatsapp = "Please add a WhatsApp number.";
     else if (!PHONE_RE.test(data.whatsapp.trim())) errors.whatsapp = "Please enter a valid phone number.";
     if (!data.date) errors.date = "Please choose a date.";
+    else if (data.date < getMinBookableDate()) errors.date = "Please choose a date from tomorrow onwards.";
     if (!data.time) errors.time = "Please choose a time.";
     if (!data.location.trim()) errors.location = "Please tell us the location.";
     if (!data.guests.trim()) errors.guests = "Please tell us how many guests.";
