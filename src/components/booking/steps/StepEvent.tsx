@@ -3,6 +3,7 @@ import type { StepErrors } from "../../../lib/validation";
 import { OCCASION_OPTIONS } from "../../../config/booking";
 import { FormField } from "../FormField";
 import { ChoicePills } from "../ChoicePills";
+import { OtherField } from "../OtherField";
 import { StepShell } from "../StepShell";
 import { TimePicker } from "../TimePicker";
 
@@ -90,6 +91,14 @@ export function StepEvent({ data, update, errors }: Props) {
           error={errors.occasion}
         />
       </div>
+
+      <OtherField
+        show={data.occasion === "Other"}
+        label="Tell us the occasion"
+        value={data.occasionOther}
+        onChange={(occasionOther) => update({ occasionOther })}
+        error={errors.occasionOther}
+      />
     </StepShell>
   );
 }

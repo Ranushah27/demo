@@ -22,6 +22,9 @@ export function validateStep(step: number, data: EnquiryData): StepErrors {
       errors.guests = "Please enter a valid number of guests.";
     }
     if (!data.occasion) errors.occasion = "Please choose an occasion.";
+    else if (data.occasion === "Other" && !data.occasionOther.trim()) {
+      errors.occasionOther = "Please tell us the occasion.";
+    }
   }
 
   if (step === 1) {
@@ -30,11 +33,17 @@ export function validateStep(step: number, data: EnquiryData): StepErrors {
 
   if (step === 2) {
     if (!data.cuisine) errors.cuisine = "Please choose a flavour direction.";
+    else if (data.cuisine === "Other" && !data.cuisineOther.trim()) {
+      errors.cuisineOther = "Please tell us what you have in mind.";
+    }
     if (!data.spiceLevel) errors.spiceLevel = "Please choose a spice preference.";
   }
 
   if (step === 3) {
     if (data.dietary.length === 0) errors.dietary = "Choose at least one option (select 'None' if not applicable).";
+    else if (data.dietary.includes("Other") && !data.dietaryOther.trim()) {
+      errors.dietaryOther = "Please tell us the dietary requirement.";
+    }
   }
 
   if (step === 4) {

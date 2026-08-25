@@ -27,6 +27,20 @@ var HEADERS = [
   "Inspiration Image",
 ];
 
+// Resolves a single-select "Other" answer to the free text the guest typed.
+function resolveOther(value, otherText) {
+  return value === "Other" && otherText ? otherText : value;
+}
+
+// Same idea for a multi-select list.
+function resolveOtherList(values, otherText) {
+  values = values || [];
+  if (!otherText || values.indexOf("Other") === -1) return values;
+  return values.map(function (v) {
+    return v === "Other" ? otherText : v;
+  });
+}
+
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = JSON.parse(e.postData.contents);
@@ -44,12 +58,12 @@ function doPost(e) {
     data.time,
     data.location,
     data.guests,
-    data.occasion,
+    resolveOther(data.occasion, data.occasionOther),
     (data.proteins || []).join(", "),
     data.avoidProteins,
-    data.cuisine,
+    resolveOther(data.cuisine, data.cuisineOther),
     data.spiceLevel,
-    (data.dietary || []).join(", "),
+    resolveOtherList(data.dietary, data.dietaryOther).join(", "),
     data.allergies,
     data.dislikedIngredients,
     data.diningStyle,

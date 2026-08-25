@@ -3,6 +3,7 @@ import type { StepErrors } from "../../../lib/validation";
 import { DIETARY_OPTIONS } from "../../../config/booking";
 import { FormField } from "../FormField";
 import { ChoicePills } from "../ChoicePills";
+import { OtherField } from "../OtherField";
 import { StepShell } from "../StepShell";
 
 type Props = {
@@ -14,13 +15,22 @@ type Props = {
 export function StepDietary({ data, update, errors }: Props) {
   return (
     <StepShell eyebrow="Step 04 — Dietary Requirements" title="Do you or your guests have any dietary requirements?">
-      <ChoicePills
-        options={DIETARY_OPTIONS}
-        value={data.dietary}
-        onChange={(v) => update({ dietary: v as string[] })}
-        multi
-        error={errors.dietary}
-      />
+      <div>
+        <ChoicePills
+          options={DIETARY_OPTIONS}
+          value={data.dietary}
+          onChange={(v) => update({ dietary: v as string[] })}
+          multi
+          error={errors.dietary}
+        />
+        <OtherField
+          show={data.dietary.includes("Other")}
+          label="Tell us the dietary requirement"
+          value={data.dietaryOther}
+          onChange={(dietaryOther) => update({ dietaryOther })}
+          error={errors.dietaryOther}
+        />
+      </div>
 
       <FormField
         as="textarea"

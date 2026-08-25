@@ -2,6 +2,7 @@ import type { EnquiryData } from "../../../lib/enquiry";
 import type { StepErrors } from "../../../lib/validation";
 import { CUISINE_OPTIONS, SPICE_OPTIONS } from "../../../config/booking";
 import { ChoicePills } from "../ChoicePills";
+import { OtherField } from "../OtherField";
 import { StepShell } from "../StepShell";
 
 type Props = {
@@ -20,6 +21,13 @@ export function StepFlavour({ data, update, errors }: Props) {
           value={data.cuisine}
           onChange={(v) => update({ cuisine: v as string })}
           error={errors.cuisine}
+        />
+        <OtherField
+          show={data.cuisine === "Other"}
+          label="Tell us what you have in mind"
+          value={data.cuisineOther}
+          onChange={(cuisineOther) => update({ cuisineOther })}
+          error={errors.cuisineOther}
         />
       </div>
 
