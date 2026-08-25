@@ -27,6 +27,18 @@ export function Enquire() {
     setData((prev) => ({ ...prev, ...patch }));
   }
 
+  function setFieldError(field: keyof EnquiryData, message?: string) {
+    setErrors((prev) => {
+      if (!message) {
+        if (!(field in prev)) return prev;
+        const next = { ...prev };
+        delete next[field];
+        return next;
+      }
+      return { ...prev, [field]: message };
+    });
+  }
+
   function goNext() {
     const stepErrors = validateStep(step, data);
     if (Object.keys(stepErrors).length > 0) {
@@ -59,7 +71,7 @@ export function Enquire() {
     return <SuccessScreen whatsappUrl={whatsappUrl} />;
   }
 
-  const stepProps = { data, update, errors };
+  const stepProps = { data, update, errors, setFieldError };
 
   return (
     <div className="min-h-[100svh] bg-black flex flex-col">

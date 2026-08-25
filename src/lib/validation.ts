@@ -13,6 +13,14 @@ export function getMinBookableDate(): string {
   return d.toISOString().split("T")[0];
 }
 
+// Validates just the date field, used for live feedback the instant a guest
+// picks a date, rather than waiting until they try to continue.
+export function validateDateField(date: string): string | undefined {
+  if (!date) return undefined;
+  if (date < getMinBookableDate()) return "That date has already passed. Please choose a date from tomorrow onwards.";
+  return undefined;
+}
+
 export function validateStep(step: number, data: EnquiryData): StepErrors {
   const errors: StepErrors = {};
 
@@ -22,7 +30,10 @@ export function validateStep(step: number, data: EnquiryData): StepErrors {
     if (!data.whatsapp.trim()) errors.whatsapp = "Please add a WhatsApp number.";
     else if (!PHONE_RE.test(data.whatsapp.trim())) errors.whatsapp = "Please enter a valid phone number.";
     if (!data.date) errors.date = "Please choose a date.";
-    else if (data.date < getMinBookableDate()) errors.date = "Please choose a date from tomorrow onwards.";
+    else {
+      const dateError = validateDateField(data.date);
+      if (dateError) errors.date = dateError;
+    }
     if (!data.time) errors.time = "Please choose a time.";
     if (!data.location.trim()) errors.location = "Please tell us the location.";
     if (!data.guests.trim()) errors.guests = "Please tell us how many guests.";

@@ -1,5 +1,5 @@
 import type { EnquiryData } from "../../../lib/enquiry";
-import { getMinBookableDate, type StepErrors } from "../../../lib/validation";
+import { getMinBookableDate, validateDateField, type StepErrors } from "../../../lib/validation";
 import { OCCASION_OPTIONS } from "../../../config/booking";
 import { FormField } from "../FormField";
 import { ChoicePills } from "../ChoicePills";
@@ -22,9 +22,10 @@ type Props = {
   data: EnquiryData;
   update: (patch: Partial<EnquiryData>) => void;
   errors: StepErrors;
+  setFieldError: (field: keyof EnquiryData, message?: string) => void;
 };
 
-export function StepEvent({ data, update, errors }: Props) {
+export function StepEvent({ data, update, errors, setFieldError }: Props) {
   return (
     <StepShell eyebrow="Step 01 · Your Event" title="Tell us about your event.">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -66,7 +67,11 @@ export function StepEvent({ data, update, errors }: Props) {
           label="Preferred Date"
           type="date"
           value={data.date}
-          onChange={(e) => update({ date: e.target.value })}
+          onChange={(e) => {
+            const date = e.target.value;
+            update({ date });
+            setFieldError("date", validateDateField(date));
+          }}
           error={errors.date}
           icon={<CalendarIcon />}
           min={getMinBookableDate()}
