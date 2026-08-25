@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { MENU_DISCLAIMER, MENU_FORMATS, SIGNATURE_DISHES } from "../../config/menus";
+import { MENU_DISCLAIMER, MENU_FORMATS } from "../../config/menus";
+import { SITE } from "../../config/site";
 import { Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionLabel";
 
@@ -39,27 +40,11 @@ export function MenusSection() {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {SIGNATURE_DISHES.map((dish, i) => (
-            <Reveal
-              key={dish.name}
-              delay={(Math.min(i, 3) as 0 | 1 | 2 | 3)}
-              className="relative aspect-square overflow-hidden group"
-            >
-              <img
-                src={dish.image}
-                alt={dish.name}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-              <p className="absolute bottom-3 left-3 right-3 text-xs text-ivory leading-snug">{dish.name}</p>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal delay={2} className="mt-14 flex justify-center">
-          <Link to="/enquire" className="btn-outline">
+        <Reveal delay={2} className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a href={SITE.instagramUrl} target="_blank" rel="noreferrer" className="btn-outline">
+            Check Out Maddy's Food Portfolio
+          </a>
+          <Link to="/enquire" className="btn-gold">
             Discuss Your Menu
           </Link>
         </Reveal>
