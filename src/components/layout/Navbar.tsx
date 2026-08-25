@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NAV_LINKS, SITE } from "../../config/site";
+import { SectionLink } from "../ui/SectionLink";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,19 +29,19 @@ export function Navbar() {
         }`}
       >
         <nav className="container-edit flex items-center justify-between h-20 md:h-24">
-          <a href="#home" className="font-display text-xl md:text-2xl tracking-[0.08em] text-ivory">
+          <SectionLink targetId="home" className="font-display text-xl md:text-2xl tracking-[0.08em] text-ivory">
             MADDY <span className="text-gold">COOKS</span>
-          </a>
+          </SectionLink>
 
           <ul className="hidden lg:flex items-center gap-10">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href.replace("/", "")}
+                <SectionLink
+                  targetId={link.id}
                   className="text-xs tracking-[0.16em] uppercase text-ivory/80 hover:text-gold transition-colors duration-300"
                 >
                   {link.label}
-                </a>
+                </SectionLink>
               </li>
             ))}
           </ul>
@@ -84,13 +85,13 @@ export function Navbar() {
               className={`transition-all duration-500 ${mobileOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               style={{ transitionDelay: `${100 + i * 60}ms` }}
             >
-              <a
-                href={link.href.replace("/", "")}
-                onClick={() => setMobileOpen(false)}
+              <SectionLink
+                targetId={link.id}
+                onNavigate={() => setMobileOpen(false)}
                 className="font-display text-3xl text-ivory hover:text-gold transition-colors"
               >
                 {link.label}
-              </a>
+              </SectionLink>
             </li>
           ))}
         </ul>

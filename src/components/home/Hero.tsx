@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CHEF } from "../../config/chef";
+import { SectionLink } from "../ui/SectionLink";
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -64,12 +65,12 @@ export function Hero() {
               <Link to="/enquire" className="btn-gold">
                 Plan Your Dining Experience
               </Link>
-              <a
-                href="#experience"
+              <SectionLink
+                targetId="experience"
                 className="text-xs tracking-[0.18em] uppercase text-ivory/80 hover:text-gold transition-colors flex items-center gap-2"
               >
                 Explore The Experience <span aria-hidden>↓</span>
-              </a>
+              </SectionLink>
             </div>
           </div>
         </div>

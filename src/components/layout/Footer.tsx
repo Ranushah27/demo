@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { SITE, buildWhatsAppLink } from "../../config/site";
+import { SectionLink } from "../ui/SectionLink";
 
 const FOOTER_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "The Chef", href: "#chef" },
-  { label: "Private Dining", href: "#private-dining" },
-  { label: "Menus", href: "#menus" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Home", id: "home" },
+  { label: "The Chef", id: "chef" },
+  { label: "Private Dining", id: "private-dining" },
+  { label: "Menus", id: "menus" },
+  { label: "Gallery", id: "gallery" },
+  { label: "FAQ", id: "faq" },
 ];
 
 export function Footer() {
@@ -27,9 +28,9 @@ export function Footer() {
             <ul className="space-y-3">
               {FOOTER_LINKS.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-ivory/80 hover:text-gold transition-colors">
+                  <SectionLink targetId={l.id} className="text-sm text-ivory/80 hover:text-gold transition-colors">
                     {l.label}
-                  </a>
+                  </SectionLink>
                 </li>
               ))}
               <li>

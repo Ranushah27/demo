@@ -20,9 +20,9 @@ export function buildWhatsAppLink(message: string, number: string = WHATSAPP_NUM
 }
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/#home" },
-  { label: "The Chef", href: "/#chef" },
-  { label: "Private Dining", href: "/#private-dining" },
-  { label: "Menus", href: "/#menus" },
-  { label: "Gallery", href: "/#gallery" },
+  { label: "Home", id: "home" },
+  { label: "The Chef", id: "chef" },
+  { label: "Private Dining", id: "private-dining" },
+  { label: "Menus", id: "menus" },
+  { label: "Gallery", id: "gallery" },
 ] as const;
