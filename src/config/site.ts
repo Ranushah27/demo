@@ -7,7 +7,8 @@ export const WHATSAPP_NUMBER = "601131094924"; // Chef Maddy's WhatsApp (+60 11-
 // Google Apps Script Web App URL that logs every enquiry to a Google Sheet.
 // See google-apps-script/README.md for the one-time setup — until this is
 // filled in, enquiries simply aren't logged anywhere (the form still works).
-export const ENQUIRY_SHEET_WEBHOOK_URL = "";
+export const ENQUIRY_SHEET_WEBHOOK_URL =
+  "https://script.google.com/macros/s/AKfycbxvGrwvhycA4grhjvuJ1vlaQnX9ukmpHSNoxLCGdwb8FoMfIb1AkjLvGmkvqfnMvXqi/exec";
 
 export const SITE = {
   name: "Maddy Cooks",
