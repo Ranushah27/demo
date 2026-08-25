@@ -18,7 +18,7 @@ export function Hero() {
         <img
           src={CHEF.heroImage}
           alt="Chef Maddy, founder of Maddy Cooks, in chef whites"
-          className="hero-image-anim h-full w-full object-cover object-[70%_15%] md:object-[75%_center] opacity-90"
+          className="hero-image-anim h-full w-full object-cover object-[45%_20%] md:object-[75%_center] opacity-90"
         />
         {/* Dark luxury treatment so the image sits inside the black theme */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30 md:from-black md:via-black/60 md:to-black/10" />
