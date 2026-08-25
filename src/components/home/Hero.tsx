@@ -63,7 +63,7 @@ export function Hero() {
               className={`mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             >
               <Link to="/enquire" className="btn-gold">
-                Plan Your Dining Experience
+                Enquire Now
               </Link>
               <SectionLink
                 targetId="experience"
