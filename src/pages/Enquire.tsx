@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { EMPTY_ENQUIRY, buildEnquiryMessage, type EnquiryData } from "../lib/enquiry";
 import { validateStep, type StepErrors } from "../lib/validation";
+import { logEnquiryToSheet } from "../lib/sheetSync";
 import { buildWhatsAppLink } from "../config/site";
 import { ProgressBar } from "../components/booking/ProgressBar";
 import { SuccessScreen } from "../components/booking/SuccessScreen";
@@ -34,6 +35,7 @@ export function Enquire() {
     }
     setErrors({});
     if (step === TOTAL_STEPS - 1) {
+      logEnquiryToSheet(data);
       setSubmitted(true);
       return;
     }

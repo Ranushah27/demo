@@ -2,7 +2,12 @@
 // Update WHATSAPP_NUMBER once the real business number is available —
 // every WhatsApp link in the app reads from this single value.
 
-export const WHATSAPP_NUMBER = "60000000000"; // TODO: replace with Maddy Cooks' real WhatsApp number (E.164, no + or spaces)
+export const WHATSAPP_NUMBER = "601131094924"; // Chef Maddy's WhatsApp (+60 11-3109 4924)
+
+// Google Apps Script Web App URL that logs every enquiry to a Google Sheet.
+// See google-apps-script/README.md for the one-time setup — until this is
+// filled in, enquiries simply aren't logged anywhere (the form still works).
+export const ENQUIRY_SHEET_WEBHOOK_URL = "";
 
 export const SITE = {
   name: "Maddy Cooks",
